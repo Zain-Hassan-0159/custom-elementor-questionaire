@@ -278,6 +278,220 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 		);
 		
 		$this->end_controls_section();
+		$this->start_controls_section(
+			'content_sectionFour',
+			[
+				'label' => esc_html__( 'Logic Range Values', 'elementor-questionaire' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'range_total',
+			[
+				'label' => __( 'Total Score', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+		
+
+		$this->add_control(
+			'totalScores',
+			[
+				'label' => __( 'Total Scores', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'step' => 1,
+				'default' => 8,
+			]
+		);
+
+		$this->add_control(
+			'range_One',
+			[
+				'label' => __( 'Range One', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+		
+
+		$this->add_control(
+			'minValueROne',
+			[
+				'label' => __( 'min value R1', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'step' => 1,
+				'default' => 0,
+			]
+		);
+
+		$this->add_control(
+			'maxValueROne',
+			[
+				'label' => __( 'max value R1', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'step' => 1,
+				'default' => 2,
+			]
+		);
+
+		$this->add_control(
+			'resultROne', [
+				'label' => __( 'Result Text', 'elementor-questionaire' ),
+				'default' => esc_html__( 'Niedriges Risiko', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'range_Two',
+			[
+				'label' => __( 'Range Two', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+		
+
+		$this->add_control(
+			'minValueRTwo',
+			[
+				'label' => __( 'min value R2', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'step' => 1,
+				'default' => 3,
+			]
+		);
+
+		$this->add_control(
+			'maxValueRTwo',
+			[
+				'label' => __( 'max value R2', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'step' => 1,
+				'default' => 4,
+			]
+		);
+
+		$this->add_control(
+			'resultRTwo', [
+				'label' => __( 'Result Text', 'elementor-questionaire' ),
+				'default' => esc_html__( 'Erhöhtes Risiko', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+		$this->add_control(
+			'range_Three',
+			[
+				'label' => __( 'Range Three', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+			]
+		);
+		
+
+		$this->add_control(
+			'minValueRThree',
+			[
+				'label' => __( 'min value R1', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'step' => 1,
+				'default' => 5,
+			]
+		);
+
+		$this->add_control(
+			'maxValueRThree',
+			[
+				'label' => __( 'max value R2', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'step' => 1,
+				'default' => 8,
+			]
+		);
+
+		$this->add_control(
+			'resultRThree', [
+				'label' => __( 'Result Text', 'elementor-questionaire' ),
+				'default' => esc_html__( 'Hohes Risiko', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'content_sectionGeneral',
+			[
+				'label' => esc_html__( 'General Settings', 'elementor-questionaire' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'textYes', [
+				'label' => __( 'Option Text (Yes)', 'elementor-questionaire' ),
+				'default' => esc_html__( 'Ja', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'textNo', [
+				'label' => __( 'Option Text (No)', 'elementor-questionaire' ),
+				'default' => esc_html__( 'Nein', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'btnNext', [
+				'label' => __( 'Button Text (Next)', 'elementor-questionaire' ),
+				'default' => esc_html__( 'Weiter', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'btnReturn', [
+				'label' => __( 'Button Text (Return)', 'elementor-questionaire' ),
+				'default' => esc_html__( 'Zurück', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'btnEvaluate', [
+				'label' => __( 'Button Text (Evaluate)', 'elementor-questionaire' ),
+				'default' => esc_html__( 'Auswerten', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'stopText', [
+				'label' => __( 'Stop Text', 'elementor-questionaire' ),
+				'default' => esc_html__( 'STOP', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'bangText', [
+				'label' => __( 'Bang Text', 'elementor-questionaire' ),
+				'default' => esc_html__( 'BANG', 'elementor-questionaire' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label_block' => true,
+			]
+		);
+		
+		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'questionaire_style_section',
@@ -307,6 +521,7 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 					'{{WRAPPER}} .questionaire h2' => 'color: {{VALUE}}',
 					'{{WRAPPER}} .questionaire .slide label' => 'color: {{VALUE}}',
 					'{{WRAPPER}} .questionaire span' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .questionaire .slideThree .rowTwo h3' => 'color: {{VALUE}}',
 					'{{WRAPPER}} .questionaire .topRow .middle' => 'background-color: {{VALUE}}',
 				],
 			]
@@ -420,15 +635,20 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
         ?>
         <style>
 			.questionaire {
-			padding: 40px 20px;
+			padding: 50px;
 			background-color: white;
 			border-radius: 4px;
 			max-width: 500px;
 			width: 100%;
 			margin: auto;
 			}
+			@media (max-width: 560px){
+				.questionaire {
+					padding: 25px;
+				}
+			}
 			input[type="radio"] {
-				transform: scale(1.5);
+				transform: scale(1);
 			}
 			.questionaire .d-none {
 			display: none !important;
@@ -487,10 +707,13 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 			.questionaire .slide p {
 			font-size: 18px;
 			font-weight: 600;
-			margin: 10px 0 5px;
+			margin: 0 0 5px;
+			}
+			.questionaire .slide input {
+			margin: 0;
 			}
 			.questionaire .slide .option {
-			margin-bottom: 15px;
+			margin-bottom: 40px;
 			}
 			.questionaire .slide .choice {
 			display: inline-block;
@@ -536,6 +759,18 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 			position: relative;
 			width: 80px;
 			height: 80px;
+			}
+			.questionaire .slideThree .rowTwo {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 20px;
+			}
+			.questionaire .slideThree .rowTwo .description{
+				flex: 1;
+			}
+			.questionaire .slideThree .rowTwo h3{
+				margin: 0;
 			}
 			.questionaire .lds-roller div {
 			-webkit-animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -642,12 +877,12 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
         <div class="topRow">
             <div class="left">
             <span class="number">1</span>
-            <span>STOP</span>
+            <span><?php echo $settings['stopText']; ?></span>
             </div>
             <div class="middle"></div>
             <div class="right">
             <span class="number">2</span>
-            <span>BANG</span>
+            <span><?php echo $settings['bangText']; ?></span>
             </div>
         </div>
         <div class="slideOne slide">
@@ -659,17 +894,17 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
                         <p><?php echo $item['questions_slOne']; ?></p>
                         <div class="choice">
                             <input type="radio" id="<?php echo $random; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsYes_slOne']; ?>">
-                            <label for="<?php echo $random; ?>">Yes</label>
+                            <label for="<?php echo $random; ?>"><?php echo $settings['textYes']; ?></label>
                         </div>
                         <div class="choice">
                             <input type="radio" id="<?php echo $random; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsNo_slOne']; ?>">
-                            <label for="<?php echo $random; ?>">No</label>
+                            <label for="<?php echo $random; ?>"><?php echo $settings['textNo']; ?></label>
                         </div>
                     </div>
                 <?php } 
             } ?>
             <div class="actions">
-            <button onclick="sildeOne()" >Further</button>
+            <button onclick="sildeOne()" ><?php echo $settings['btnNext']; ?></button>
             </div>
         </div>
         <div class="slideTwo slide d-none">
@@ -681,29 +916,35 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
                         <p><?php echo $item['questions_slTwo']; ?></p>
                         <div class="choice">
                             <input type="radio" id="<?php echo $random; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsYes_slTwo']; ?>">
-                            <label for="<?php echo $random; ?>">Yes</label>
+                            <label for="<?php echo $random; ?>"><?php echo $settings['textYes']; ?></label>
                         </div>
                         <div class="choice">
                             <input type="radio" id="<?php echo $random; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsNo_slTwo']; ?>">
-                            <label for="<?php echo $random; ?>">No</label>
+                            <label for="<?php echo $random; ?>"><?php echo $settings['textNo']; ?></label>
                         </div>
                     </div>
                 <?php } 
             } ?>
             <div class="actions">
-            <button onclick="sildeReturn()" >Return</button>
-            <button onclick="sildeTwo()" >Evaluate</button>
+            <button onclick="sildeReturn()" ><?php echo $settings['btnReturn']; ?></button>
+            <button onclick="sildeTwo()" ><?php echo $settings['btnEvaluate']; ?></button>
             </div>
         </div>
 		<div class="slideThree slide results d-none">
 			<h2><?php echo $settings['questions_slThree']; ?></h2>
-			<div class="totalScores">
-			<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-			<div class="Scores"></div>
+			<div class="rowTwo">
+				<div class="totalScores">
+					<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+					<div class="Scores"></div>
+				</div>
+				<div class="description">
+					<h3></h3>
+					<?php echo $settings['item_description_slThree']; ?>
+				</div>
+
 			</div>
-			<?php echo $settings['item_description_slThree']; ?>
 			<div class="actions">
-			<button onclick="sildeReturnTwo()" >Return</button>
+			<button onclick="sildeReturnTwo()" ><?php echo $settings['btnReturn']; ?></button>
 			</div>
 		</div>
         </div>
@@ -726,16 +967,29 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 
 				// Get Values of Slide One
 				score = 0;
+				let message = '';
 				document.querySelectorAll(".questionaire .choice input").forEach(function(input){
 					if(input.checked){
 						score += parseInt(input.value);  
 					}
 				})
+				if(score >= parseInt('<?php echo $settings['minValueROne']; ?>') && score <= parseInt('<?php echo $settings['maxValueROne']; ?>') ){
+					message = '<?php echo $settings['resultROne']; ?>';
+				}
+				if(score >= parseInt('<?php echo $settings['minValueRTwo']; ?>') && score <= parseInt('<?php echo $settings['maxValueRTwo']; ?>') ){
+					message = '<?php echo $settings['resultRTwo']; ?>';
+				}
+				if(score >= parseInt('<?php echo $settings['minValueRThree']; ?>') && score <= parseInt('<?php echo $settings['maxValueRThree']; ?>')){
+					message = '<?php echo $settings['resultRThree']; ?>';
+				}
+
 				console.log(score);
 				var delayInMilliseconds = 3000; //3 second
 				setTimeout(function() {
+				let totalScores = score + '/' + '<?php echo $settings['totalScores']?>';
 				document.querySelector(".questionaire .lds-roller").classList.add("d-none");
-				document.querySelector(".questionaire .slideThree .Scores").innerHTML = score;
+				document.querySelector(".questionaire .slideThree .Scores").innerHTML = totalScores;
+				document.querySelector(".questionaire .slideThree .description h3").innerHTML = message;
 				}, delayInMilliseconds);
 			}
 			function sildeReturnTwo(){
@@ -743,7 +997,7 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 				document.querySelector(".questionaire .slideTwo").classList.remove("d-none");
 				document.querySelector(".questionaire .lds-roller").classList.remove("d-none");
 				document.querySelector(".questionaire .slideThree .Scores").innerHTML = '';
-
+				document.querySelector(".questionaire .slideThree .description h3").innerHTML = '';
 			}
         </script>
         <?php
