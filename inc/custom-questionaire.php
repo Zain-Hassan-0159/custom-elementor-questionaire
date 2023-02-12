@@ -163,23 +163,23 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
                 'default' => [
 					[
 						'questions_slOne' => esc_html__( 'do you snore loudly?', 'elementor-questionaire' ),
-						'pointsYes_slOne' => esc_html__( '12', 'elementor-questionaire' ),
-						'pointsNo_slOne' => esc_html__( '5', 'elementor-questionaire' ),
+						'pointsYes_slOne' => esc_html__( '1', 'elementor-questionaire' ),
+						'pointsNo_slOne' => esc_html__( '0', 'elementor-questionaire' ),
 					],
 					[
 						'questions_slOne' => esc_html__( 'Do you often feel exhausted or tired during the day?', 'elementor-questionaire' ),
-						'pointsYes_slOne' => esc_html__( '11', 'elementor-questionaire' ),
-						'pointsNo_slOne' => esc_html__( '13', 'elementor-questionaire' ),
+						'pointsYes_slOne' => esc_html__( '1', 'elementor-questionaire' ),
+						'pointsNo_slOne' => esc_html__( '0', 'elementor-questionaire' ),
 					],
 					[
 						'questions_slOne' => esc_html__( 'Have you ever experienced pauses in breathing while you were sleeping?', 'elementor-questionaire' ),
-						'pointsYes_slOne' => esc_html__( '3', 'elementor-questionaire' ),
-						'pointsNo_slOne' => esc_html__( '9', 'elementor-questionaire' ),
+						'pointsYes_slOne' => esc_html__( '1', 'elementor-questionaire' ),
+						'pointsNo_slOne' => esc_html__( '0', 'elementor-questionaire' ),
 					],
 					[
 						'questions_slOne' => esc_html__( 'Do you have high blood pressure or are you being treated for hypertension?', 'elementor-questionaire' ),
-						'pointsYes_slOne' => esc_html__( '55', 'elementor-questionaire' ),
-						'pointsNo_slOne' => esc_html__( '22', 'elementor-questionaire' ),
+						'pointsYes_slOne' => esc_html__( '1', 'elementor-questionaire' ),
+						'pointsNo_slOne' => esc_html__( '0', 'elementor-questionaire' ),
 					],
 				],
 				'title_field' => '{{{ questions_slOne }}}',
@@ -226,23 +226,23 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
                 'default' => [
 					[
 						'questions_slTwo' => esc_html__( 'Is your body mass index over 35?', 'elementor-questionaire' ),
-						'pointsYes_slTwo' => esc_html__( '22', 'elementor-questionaire' ),
-						'pointsNo_slTwo' => esc_html__( '15', 'elementor-questionaire' ),
+						'pointsYes_slTwo' => esc_html__( '1', 'elementor-questionaire' ),
+						'pointsNo_slTwo' => esc_html__( '0', 'elementor-questionaire' ),
 					],
 					[
 						'questions_slTwo' => esc_html__( 'Are you over 50 years old?', 'elementor-questionaire' ),
-						'pointsYes_slTwo' => esc_html__( '31', 'elementor-questionaire' ),
-						'pointsNo_slTwo' => esc_html__( '23', 'elementor-questionaire' ),
+						'pointsYes_slTwo' => esc_html__( '1', 'elementor-questionaire' ),
+						'pointsNo_slTwo' => esc_html__( '0', 'elementor-questionaire' ),
 					],
 					[
 						'questions_slTwo' => esc_html__( 'Is your neck circumference over 40cm?', 'elementor-questionaire' ),
-						'pointsYes_slTwo' => esc_html__( '33', 'elementor-questionaire' ),
-						'pointsNo_slTwo' => esc_html__( '93', 'elementor-questionaire' ),
+						'pointsYes_slTwo' => esc_html__( '1', 'elementor-questionaire' ),
+						'pointsNo_slTwo' => esc_html__( '0', 'elementor-questionaire' ),
 					],
 					[
 						'questions_slTwo' => esc_html__( 'Are you male (biological)?', 'elementor-questionaire' ),
-						'pointsYes_slTwo' => esc_html__( '55', 'elementor-questionaire' ),
-						'pointsNo_slTwo' => esc_html__( '12', 'elementor-questionaire' ),
+						'pointsYes_slTwo' => esc_html__( '1', 'elementor-questionaire' ),
+						'pointsNo_slTwo' => esc_html__( '0', 'elementor-questionaire' ),
 					],
 				],
 				'title_field' => '{{{ questions_slTwo }}}',
@@ -571,7 +571,7 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 				'name' => 'question_heading',
 				'label' => __( 'Questions Heading Typography', 'elementor-questionaire' ),
                 'label_block' => true,
-				'selector' => '{{WRAPPER}} .questionaire .slide p',
+				'selector' => '{{WRAPPER}} .questionaire .slide p, {{WRAPPER}} .questionaire .slideThree .rowTwo h3, {{WRAPPER}} .questionaire .slide .Scores',
 			]
 		);
 		
@@ -581,7 +581,7 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 				'name' => 'question_options',
 				'label' => __( 'Options Typography', 'elementor-questionaire' ),
                 'label_block' => true,
-				'selector' => '{{WRAPPER}} .questionaire .slide label',
+				'selector' => '{{WRAPPER}} .questionaire .slide label,{{WRAPPER}} .questionaire .slide .item_desc p',
 			]
 		);
 		
@@ -620,25 +620,15 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-        function random_strings($length_of_string)
-        {
-        
-            // String of all alphanumeric character
-            $str_result = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-        
-            // Shuffle the $str_result and returns substring
-            // of specified length
-            return substr(str_shuffle($str_result),
-                            0, $length_of_string);
-        }
-		
+			// String of all alphanumeric character
+			$str_result = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
         ?>
         <style>
 			.questionaire {
 			padding: 50px;
 			background-color: white;
 			border-radius: 4px;
-			max-width: 500px;
 			width: 100%;
 			margin: auto;
 			}
@@ -852,6 +842,9 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 			top: 56px;
 			left: 12px;
 			}
+			.questionaire .slide .item_desc p{
+				font-weight: normal;
+			}
 			@-webkit-keyframes lds-roller {
 			0% {
 				-webkit-transform: rotate(0deg);
@@ -888,17 +881,19 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
         <div class="slideOne slide">
             <?php if ( $settings['questions_list_slOne'] ) { 
                 foreach (  $settings['questions_list_slOne'] as $item ) { 
-                    $random = random_strings(6);
+                    $random = substr(str_shuffle($str_result), 0, 6);
+                    $random1 = substr(str_shuffle($str_result), 0, 5);
+                    $random2 = substr(str_shuffle($str_result), 0, 4);
                     ?>
                     <div class="option">
                         <p><?php echo $item['questions_slOne']; ?></p>
                         <div class="choice">
-                            <input type="radio" id="<?php echo $random; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsYes_slOne']; ?>">
-                            <label for="<?php echo $random; ?>"><?php echo $settings['textYes']; ?></label>
+                            <input type="radio" id="<?php echo $random1; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsYes_slOne']; ?>">
+                            <label for="<?php echo $random1; ?>"><?php echo $settings['textYes']; ?></label>
                         </div>
                         <div class="choice">
-                            <input type="radio" id="<?php echo $random; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsNo_slOne']; ?>">
-                            <label for="<?php echo $random; ?>"><?php echo $settings['textNo']; ?></label>
+                            <input type="radio" id="<?php echo $random2; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsNo_slOne']; ?>">
+                            <label for="<?php echo $random2; ?>"><?php echo $settings['textNo']; ?></label>
                         </div>
                     </div>
                 <?php } 
@@ -910,17 +905,19 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
         <div class="slideTwo slide d-none">
             <?php if ( $settings['questions_list_slTwo'] ) { 
                 foreach (  $settings['questions_list_slTwo'] as $item ) { 
-                    $random = random_strings(7);
+                    $random = substr(str_shuffle($str_result), 0, 7);
+                    $random1 = substr(str_shuffle($str_result), 0, 4);
+                    $random2 = substr(str_shuffle($str_result), 0, 5);
                     ?>
                     <div class="option">
                         <p><?php echo $item['questions_slTwo']; ?></p>
                         <div class="choice">
-                            <input type="radio" id="<?php echo $random; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsYes_slTwo']; ?>">
-                            <label for="<?php echo $random; ?>"><?php echo $settings['textYes']; ?></label>
+                            <input type="radio" id="<?php echo $random1; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsYes_slTwo']; ?>">
+                            <label for="<?php echo $random1; ?>"><?php echo $settings['textYes']; ?></label>
                         </div>
                         <div class="choice">
-                            <input type="radio" id="<?php echo $random; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsNo_slTwo']; ?>">
-                            <label for="<?php echo $random; ?>"><?php echo $settings['textNo']; ?></label>
+                            <input type="radio" id="<?php echo $random2; ?>" name="<?php echo $random; ?>" value="<?php echo $item['pointsNo_slTwo']; ?>">
+                            <label for="<?php echo $random2; ?>"><?php echo $settings['textNo']; ?></label>
                         </div>
                     </div>
                 <?php } 
@@ -939,7 +936,9 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 				</div>
 				<div class="description">
 					<h3></h3>
-					<?php echo $settings['item_description_slThree']; ?>
+					<div class="item_desc">
+						<?php echo $settings['item_description_slThree']; ?>
+					</div>
 				</div>
 
 			</div>
@@ -984,7 +983,7 @@ class questionaireCustom_widget_elementor extends \Elementor\Widget_Base {
 				}
 
 				console.log(score);
-				var delayInMilliseconds = 3000; //3 second
+				var delayInMilliseconds = 1000; //3 second
 				setTimeout(function() {
 				let totalScores = score + '/' + '<?php echo $settings['totalScores']?>';
 				document.querySelector(".questionaire .lds-roller").classList.add("d-none");
